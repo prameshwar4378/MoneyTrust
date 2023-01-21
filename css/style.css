@@ -89,7 +89,18 @@ a{
 	opacity:0;
 	visibility: hidden;
 }
-@media(min-width: 992px){
+.logo{
+	height: auto;
+	width: 100%;
+}
+@media only screen and (max-width: 600px) {
+	.logo{
+		display: none;
+	}
+}
+@media(min-width: 992px)
+{
+
 .header .menu > ul > li.menu-item-has-children:hover .sub-menu{
 	margin-top: 0;
 	visibility: visible;
