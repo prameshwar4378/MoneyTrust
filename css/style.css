@@ -337,6 +337,7 @@ a{
 		display: none;
 		transform: translateX(0%);
 		overflow-y: auto;
+		display: contents;
 	}
 .header .menu > ul > li .sub-menu.active{
 	display: block;
