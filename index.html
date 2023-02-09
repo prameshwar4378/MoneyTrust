@@ -37,22 +37,28 @@
     <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
 
     <!-- Jquery for adding header and footer -->
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"> </script>
-   
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"> </script>
+
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
 </head>
+
 <script>
-    $(function(){
-    $("#header").load("./header.html"); 
-    $("#footer").load("./footer.html"); 
+    $(function () {
+        $("#header").load("./header.html");
+        $("#footer").load("./footer.html");
     });
 </script>
-<body>
+
+<body onload="myFunction()">
+
+    <div id="loading"></div>
+
     <div id="header"></div>
 
-<!-- Carousel Start -->
+    <!-- Carousel Start -->
     <div class="container-fluid p-0 mb-5" data-aos="fade-down" data-aos-delay="100" data-aos-duration="1500">
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -131,7 +137,8 @@
                     </div>
                     <div class="col-sm-1">for</div>
                     <div class="col-sm-3">
-                        <select name="cmb_loan_type_option" id="cmb_loan_type_option" class="form-control "  onchange="getOption_for_calculator()">
+                        <select name="cmb_loan_type_option" id="cmb_loan_type_option" class="form-control "
+                            onchange="getOption_for_calculator()">
                         </select>
                     </div>
                     <div class="col-sm-2"></div>
@@ -144,7 +151,7 @@
                     <div class="col-sm-1">
                     </div>
                     <div class="col-sm-3 " data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1500">
-                        <div class="loan-card"  >
+                        <div class="loan-card">
                             <br>
                             <i class="fa fa-user"></i>
                             <br>
@@ -165,11 +172,13 @@
                     </div>
 
 
-                    <div class="col-sm-8" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1500" id="loan-calculator">
+                    <div class="col-sm-8" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1500"
+                        id="loan-calculator">
                         <div class="loan-calculator">
                             <h4 id="personal_loan_title">Calculate your EMI for Personal Loan</h4>
                             <h4 id="home_loan_title" style="display: none;">Calculate your EMI for Home Loan</h4>
-                            <h4 id="business_loan_title" style="display: none;">Calculate your EMI for Business Loan</h4>
+                            <h4 id="business_loan_title" style="display: none;">Calculate your EMI for Business Loan
+                            </h4>
                             <h4 id="gold_loan_title" style="display: none;">Calculate your EMI for gold Loan</h4>
                             <br>
 
@@ -228,35 +237,37 @@
                     </div>
                 </div>
 
-                
+
 
 
                 <div class="row text-center" id="business-loan-section" style="display: none;">
-                    <div class="col-sm-12 mt-2 text-center" >
-                            <center>
-                                <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">We are update soon business loan section</h1>
-                            </center>
+                    <div class="col-sm-12 mt-2 text-center">
+                        <center>
+                            <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">We are update soon business
+                                loan section</h1>
+                        </center>
                     </div>
                 </div>
-               
-                <div class="row text-center" id="gold-loan-section" style="display: none;">
-                    <div class="col-sm-12 mt-2 text-center" >
-                            <center>
-                                <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">We are update soon gold loan section</h1>
-                            </center>
-                    </div>
-                </div>
-                                 
-                <div class="row text-center" id="exception-section" style="display: none;">
-                    <div class="col-sm-12 mt-2 text-center" >
-                            <center>
-                                <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">We are update soon...</h1>
-                            </center>
-                    </div>
-                </div>
-                       
 
-            </div>       
+                <div class="row text-center" id="gold-loan-section" style="display: none;">
+                    <div class="col-sm-12 mt-2 text-center">
+                        <center>
+                            <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">We are update soon gold loan
+                                section</h1>
+                        </center>
+                    </div>
+                </div>
+
+                <div class="row text-center" id="exception-section" style="display: none;">
+                    <div class="col-sm-12 mt-2 text-center">
+                        <center>
+                            <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">We are update soon...</h1>
+                        </center>
+                    </div>
+                </div>
+
+
+            </div>
         </div>
 
 
@@ -546,12 +557,22 @@
     </section>
 
 
-<div id="footer"></div>
+    <div id="footer"></div>
 
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
             class="bi bi-arrow-up"></i></a>
+
+
+
+    <script>
+        var preloader = document.getElementById("loading");
+        function myFunction() {
+            preloader.style.display = 'none';
+        };
+    </script>
+
 
     <script>
         var var_range_loan_amount = document.getElementById("range-loan-amount");
@@ -614,92 +635,88 @@
 
         }
         // document.getElementById('lbl-monthly-emi').textContent="15"
-        
+
 
         const select1 = document.getElementById("cmb_loan_type");
         const select2 = document.getElementById("cmb_loan_type_option");
 
-        
-        select1.addEventListener("change", function() {
-        const selectedOption = this.value;
 
-        select2.innerHTML = "";
+        select1.addEventListener("change", function () {
+            const selectedOption = this.value;
 
-        if (selectedOption === "Loan") {
-            select2.innerHTML = `
+            select2.innerHTML = "";
+
+            if (selectedOption === "Loan") {
+                select2.innerHTML = `
             <option value="">--- Select ---</option>
             <option value="personal_loan">Personal Loan</option>
             <option value="home_loan">Home Loan</option>
             <option value="business_loan">Business Loan</option>
             <option value="gold_loan">Gold Loan</option>
             `;
-        } else if (selectedOption === "Cards") {
-            select2.innerHTML = `
+            } else if (selectedOption === "Cards") {
+                select2.innerHTML = `
             <option value="">--- Select ---</option>
             <option value="Lifestype">Lifestype</option>
             <option value="Travel & Fuel">Travel & Fuel</option>
             <option value="Shoping">Shoping</option>
             <option value="Rewards">Rewards</option>
             `;
-        }
-        else if (selectedOption === "Insurance") {
-            select2.innerHTML = `
+            }
+            else if (selectedOption === "Insurance") {
+                select2.innerHTML = `
             <option value="">--- Select ---</option>
             <option value="Health Insurace">Health Insurace</option>
             <option value="Car Insurace">Car Insurace</option>
             <option value="Term Insurace">Term Insurace</option>
             <option value="Travel Insurace">Travel Insurace</option>
             `;
-        }
+            }
 
         });
 
         function getOption_for_calculator() {
-        selectElement = document.querySelector('#cmb_loan_type_option');
-        output = selectElement.value;
-        // document.querySelector('.output').textContent = output;
-        if (output==="personal_loan")
-            { 
-            document.getElementById('personal-loan-section').style.display='flex';
-            document.getElementById('exception-section').style.display='none';
-            document.getElementById('business-loan-section').style.display='none';
-            document.getElementById('gold-loan-section').style.display='none';
-            document.getElementById('home-loan-section').style.display='none';
-            alert("this is sample test")
-           }
-        else if (output==="home_loan")      
-            { 
-            document.getElementById('exception-section').style.display='none';
-            document.getElementById('personal-loan-section').style.display='none';
-            document.getElementById('home-loan-section').style.display='flex';
-            document.getElementById('business-loan-section').style.display='none';
-            document.getElementById('gold-loan-section').style.display='none';
-            // document.getElementById('calculator-tool').style.display='none';
-           }
-           else if (output==="business_loan")
-           {
-            document.getElementById('exception-section').style.display='none';
-            document.getElementById('personal-loan-section').style.display='none';
-            document.getElementById('home-loan-section').style.display='none';
-            document.getElementById('business-loan-section').style.display='flex';
-            document.getElementById('gold-loan-section').style.display='none';
-           }
-           else if (output==="gold_loan")
-           {
-            document.getElementById('exception-section').style.display='none';
-            document.getElementById('personal-loan-section').style.display='none';
-            document.getElementById('home-loan-section').style.display='none';
-            document.getElementById('business-loan-section').style.display='none';
-            document.getElementById('gold-loan-section').style.display='flex';
-           }
-           else{
-            document.getElementById('exception-section').style.display='flex';
-            document.getElementById('personal-loan-section').style.display='none';
-            document.getElementById('home-loan-section').style.display='none';
-            document.getElementById('business-loan-section').style.display='none';
-            document.getElementById('gold-loan-section').style.display='none';
-           }
-    }
+            selectElement = document.querySelector('#cmb_loan_type_option');
+            output = selectElement.value;
+            // document.querySelector('.output').textContent = output;
+            if (output === "personal_loan") {
+                document.getElementById('personal-loan-section').style.display = 'flex';
+                document.getElementById('exception-section').style.display = 'none';
+                document.getElementById('business-loan-section').style.display = 'none';
+                document.getElementById('gold-loan-section').style.display = 'none';
+                document.getElementById('home-loan-section').style.display = 'none';
+                alert("this is sample test")
+            }
+            else if (output === "home_loan") {
+                document.getElementById('exception-section').style.display = 'none';
+                document.getElementById('personal-loan-section').style.display = 'none';
+                document.getElementById('home-loan-section').style.display = 'flex';
+                document.getElementById('business-loan-section').style.display = 'none';
+                document.getElementById('gold-loan-section').style.display = 'none';
+                // document.getElementById('calculator-tool').style.display='none';
+            }
+            else if (output === "business_loan") {
+                document.getElementById('exception-section').style.display = 'none';
+                document.getElementById('personal-loan-section').style.display = 'none';
+                document.getElementById('home-loan-section').style.display = 'none';
+                document.getElementById('business-loan-section').style.display = 'flex';
+                document.getElementById('gold-loan-section').style.display = 'none';
+            }
+            else if (output === "gold_loan") {
+                document.getElementById('exception-section').style.display = 'none';
+                document.getElementById('personal-loan-section').style.display = 'none';
+                document.getElementById('home-loan-section').style.display = 'none';
+                document.getElementById('business-loan-section').style.display = 'none';
+                document.getElementById('gold-loan-section').style.display = 'flex';
+            }
+            else {
+                document.getElementById('exception-section').style.display = 'flex';
+                document.getElementById('personal-loan-section').style.display = 'none';
+                document.getElementById('home-loan-section').style.display = 'none';
+                document.getElementById('business-loan-section').style.display = 'none';
+                document.getElementById('gold-loan-section').style.display = 'none';
+            }
+        }
     </script>
 
     <!-- scrolling animation    -->
@@ -709,6 +726,7 @@
             duration: 2000;
         }
     </script>
+
 
     <!-- JavaScript Libraries -->
     <script type="text/javascript" src="js/owl-carousel/owl.carousel.js"></script>
