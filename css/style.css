@@ -8,6 +8,8 @@
     z-index: 99999;
   }
 
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 body{
 	line-height: 1.5;
 	font-family: 'Poppins', sans-serif;
@@ -97,18 +99,7 @@ a{
 	opacity:0;
 	visibility: hidden;
 }
-.logo{
-	height: auto;
-	width: 100%;
-}
-@media only screen and (max-width: 600px) {
-	.logo{
-		display: none;
-	}
-}
-@media(min-width: 992px)
-{
-
+@media(min-width: 992px){
 .header .menu > ul > li.menu-item-has-children:hover .sub-menu{
 	margin-top: 0;
 	visibility: visible;
@@ -179,16 +170,6 @@ a{
 .header .item-right a:hover,
 .header .menu > ul > li:hover > a{
 	color:#0446aa;
-}
-/* banner section */
-.banner-section{
-  /* background-image: url('../img/banner.jpg'); */
-  background-color: #555555;
-  background-size: cover;
-  background-position: center;
-  height: 700px;
-  width: 100%;
-  display: block;
 }
 .mobile-menu-head,
 .mobile-menu-trigger{
@@ -345,7 +326,6 @@ a{
 		display: none;
 		transform: translateX(0%);
 		overflow-y: auto;
-		display: contents;
 	}
 .header .menu > ul > li .sub-menu.active{
 	display: block;
@@ -407,6 +387,9 @@ a{
 	  opacity:1;	
 	}
 }
+
+
+
 
 
 
