@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
+#loading{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #fff url(https://miro.medium.com/max/1400/1*CsJ05WEGfunYMLGfsT2sXA.gif) no-repeat center center;
+    z-index: 99999;
+  }
+  
 body{
 	line-height: 1.5;
 	font-family: 'Poppins', sans-serif;
