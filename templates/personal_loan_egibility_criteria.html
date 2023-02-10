@@ -2,408 +2,475 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overview Page</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eligibility Criteria</title>
 
-    <link rel="stylesheet" href="../css/style.css">
-    <!-- Jquery for adding header and footer -->
-    <script src="https://code.jquery.com/jquery-3.3.1.js"
-        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"> </script>
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- Jquery for adding header and footer -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"> </script>
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
 
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
+
+  <!-- Vendor CSS Files -->
+  <!-- <link href="../assets/vendor/aos/aos.css" rel="stylesheet"> -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 </head>
 
 <script>
-    $(function () {
-        $("#header").load("../header.html");
-        $("#footer").load("../footer.html");
-    });
+  $(function () {
+    $("#header").load("../header.html");
+    $("#footer").load("../footer.html");
+  });
 </script>
 <style>
-    /*--------------------------------------------------------------
+  /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+  #hero {
+    width: 100%;
+    height: 75vh;
+    background: url("../img/hero-bg.jpg") top left;
+    background-size: cover;
+    position: relative;
+  }
+
+  #hero:before {
+    content: "";
+    background: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  #hero .container {
+    position: relative;
+  }
+
+  #hero h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #222222;
+    font-family: "Poppins", sans-serif;
+  }
+
+  #hero h1 span {
+    color: #106eea;
+  }
+
+  #hero h2 {
+    color: #555555;
+    margin: 5px 0 30px 0;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  #hero .btn-get-started {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 28px;
+    border-radius: 4px;
+    transition: 0.5s;
+    color: #fff;
+    background: #106eea;
+  }
+
+  #hero .btn-get-started:hover {
+    background: #247cf0;
+  }
+
+  #hero .btn-watch-video {
+    font-size: 16px;
+    transition: 0.5s;
+    margin-left: 25px;
+    color: #222222;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+  }
+
+  #hero .btn-watch-video i {
+    color: #106eea;
+    font-size: 32px;
+    transition: 0.3s;
+    line-height: 0;
+    margin-right: 8px;
+  }
+
+  #hero .btn-watch-video:hover {
+    color: #106eea;
+  }
+
+  #hero .btn-watch-video:hover i {
+    color: #3b8af2;
+  }
+
+  @media (min-width: 1024px) {
     #hero {
-        width: 100%;
-        height: 70vh;
-        background: #fef8f5;
-        border-bottom: 2px solid #fcebe3;
-        margin: 72px 0 -72px 0;
+      background-attachment: fixed;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #hero {
+      height: 100vh;
     }
 
     #hero h1 {
-        margin: 0;
-        font-size: 48px;
-        font-weight: 700;
-        line-height: 56px;
-        color: #4e4039;
+      font-size: 28px;
+      line-height: 36px;
     }
 
     #hero h2 {
-        color: #a08f86;
-        margin: 15px 0 0 0;
-        font-size: 24px;
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 30px;
     }
 
-    #hero .btn-get-started {
-        font-family: "Raleway", sans-serif;
-        font-weight: 500;
-        font-size: 16px;
-        letter-spacing: 1px;
-        display: inline-block;
-        padding: 8px 28px;
-        border-radius: 3px;
-        transition: 0.5s;
-        margin-top: 30px;
-        color: #fff;
-        background: #eb5d1e;
+    #hero .btn-get-started,
+    #hero .btn-watch-video {
+      font-size: 13px;
     }
+  }
 
-    #hero .btn-get-started:hover {
-        background: #ef7f4d;
+  @media (max-height: 500px) {
+    #hero {
+      height: 120vh;
     }
+  }
 
-    #hero .animated {
-        animation: up-down 2s ease-in-out infinite alternate-reverse both;
-    }
-
-    @media (max-width: 991px) {
-        #hero {
-            height: calc(100vh - 72px);
-        }
-
-        #hero .animated {
-            -webkit-animation: none;
-            animation: none;
-        }
-
-        #hero .hero-img {
-            text-align: center;
-        }
-
-        #hero .hero-img img {
-            width: 50%;
-        }
-    }
-
-    @media (max-width: 768px) {
-        #hero h1 {
-            font-size: 28px;
-            line-height: 36px;
-        }
-
-        #hero h2 {
-            font-size: 18px;
-            line-height: 24px;
-        }
-
-        #hero .hero-img img {
-            width: 70%;
-        }
-    }
-
-    @media (max-width: 575px) {
-        #hero .hero-img img {
-            width: 80%;
-        }
-    }
-
-    @media (max-height: 600px) {
-        #hero {
-            height: 120vh;
-        }
-    }
-
-    @-webkit-keyframes up-down {
-        0% {
-            transform: translateY(10px);
-        }
-
-        100% {
-            transform: translateY(-10px);
-        }
-    }
-
-    @keyframes up-down {
-        0% {
-            transform: translateY(10px);
-        }
-
-        100% {
-            transform: translateY(-10px);
-        }
-    }
-
-    /*--------------------------------------------------------------
+  /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
-    section {
-        padding: 60px 0;
-        overflow: hidden;
-    }
+  section {
+    padding: 60px 0;
+    overflow: hidden;
+  }
 
-    .section-bg {
-        background-color: #fef8f5;
-    }
+  .section-bg {
+    background-color: #f6f9fe;
+  }
 
-    .section-title {
-        text-align: center;
-        padding-bottom: 30px;
-    }
+  .section-title {
+    text-align: center;
+    padding-bottom: 30px;
+  }
 
-    .section-title h2 {
-        font-size: 24px;
-        font-weight: 700;
-        padding-bottom: 0;
-        line-height: 1px;
-        margin-bottom: 15px;
-        color: #c2b7b1;
-    }
+  .section-title h2 {
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    padding: 8px 20px;
+    margin: 0;
+    background: #e7f1fd;
+    color: #106eea;
+    display: inline-block;
+    text-transform: uppercase;
+    border-radius: 50px;
+  }
 
+  .section-title h3 {
+    margin: 15px 0 0 0;
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  .section-title h3 span {
+    color: #106eea;
+  }
+
+  .section-title p {
+    margin: 15px auto 0 auto;
+    font-weight: 600;
+  }
+
+  @media (min-width: 1024px) {
     .section-title p {
-        padding-bottom: 15px;
-        margin-bottom: 15px;
-        position: relative;
-        font-size: 32px;
-        font-weight: 700;
-        color: #4e4039;
+      width: 50%;
     }
+  }
 
-    .section-title p::after {
-        content: "";
-        position: absolute;
-        display: block;
-        width: 60px;
-        height: 2px;
-        background: #eb5d1e;
-        bottom: 0;
-        left: calc(50% - 30px);
-    }
-
-    /*--------------------------------------------------------------
+  /*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/
-    .breadcrumbs {
-        padding: 15px 0;
-        background-color: #fef5f1;
-        min-height: 40px;
-    }
+  .breadcrumbs {
+    padding: 20px 0;
+    background-color: #f1f6fe;
+    min-height: 40px;
+  }
 
+  .breadcrumbs h2 {
+    font-size: 24px;
+    font-weight: 300;
+    margin: 0;
+  }
+
+  @media (max-width: 992px) {
     .breadcrumbs h2 {
-        font-size: 24px;
-        font-weight: 300;
+      margin: 0 0 10px 0;
+    }
+  }
+
+  .breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .breadcrumbs ol li+li {
+    padding-left: 10px;
+  }
+
+  .breadcrumbs ol li+li::before {
+    display: inline-block;
+    padding-right: 10px;
+    color: #6c757d;
+    content: "/";
+  }
+
+  @media (max-width: 768px) {
+    .breadcrumbs .d-flex {
+      display: block !important;
     }
 
     .breadcrumbs ol {
-        display: flex;
-        flex-wrap: wrap;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        font-size: 14px;
+      display: block;
     }
 
-    .breadcrumbs ol li+li {
-        padding-left: 10px;
+    .breadcrumbs ol li {
+      display: inline-block;
     }
+  }
 
-    .breadcrumbs ol li+li::before {
-        display: inline-block;
-        padding-right: 10px;
-        color: #6c757d;
-        content: "/";
-    }
-
-    @media (max-width: 768px) {
-        .breadcrumbs .d-flex {
-            display: block !important;
-        }
-
-        .breadcrumbs ol {
-            display: block;
-        }
-
-        .breadcrumbs ol li {
-            display: inline-block;
-        }
-    }
-
-    /*--------------------------------------------------------------
-# About
+  /*--------------------------------------------------------------
+# Featured Services
 --------------------------------------------------------------*/
-    .about h3 {
-        font-weight: 700;
-        font-size: 34px;
-        color: #4e4039;
-    }
+  .featured-services .icon-box {
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+    z-index: 1;
+  }
 
-    .about h4 {
-        font-size: 20px;
-        font-weight: 700;
-        margin-top: 5px;
-        color: #7a6960;
-    }
+  .featured-services .icon-box::before {
+    content: "";
+    position: absolute;
+    background: #cbe0fb;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 100%;
+    transition: all 0.3s;
+    z-index: -1;
+  }
 
-    .about i {
-        font-size: 48px;
-        margin-top: 15px;
-        color: #f39e7a;
-    }
+  .featured-services .icon-box:hover::before {
+    background: #106eea;
+    top: 0;
+    border-radius: 0px;
+  }
 
-    .about p {
-        font-size: 15px;
-        color: #5a6570;
-    }
+  .featured-services .icon {
+    margin-bottom: 15px;
+  }
 
-    @media (max-width: 991px) {
-        .about .about-img img {
-            max-width: 70%;
-        }
-    }
+  .featured-services .icon i {
+    font-size: 48px;
+    line-height: 1;
+    color: #106eea;
+    transition: all 0.3s ease-in-out;
+  }
 
-    @media (max-width: 767px) {
-        .about .about-img img {
-            max-width: 90%;
-        }
-    }
+  .featured-services .title {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
 
-    /*--------------------------------------------------------------
-# Services
---------------------------------------------------------------*/
-    .services .icon-box {
-        padding: 30px;
-        position: relative;
-        overflow: hidden;
-        margin: 0 0 40px 0;
-        background: #fff;
-        box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
-        transition: all 0.3s ease-in-out;
-        border-radius: 15px;
-        text-align: center;
-        border-bottom: 3px solid #fff;
-    }
+  .featured-services .title a {
+    color: #111;
+  }
 
-    .services .icon-box:hover {
-        transform: translateY(-5px);
-        border-color: #ef7f4d;
-    }
+  .featured-services .description {
+    font-size: 15px;
+    line-height: 28px;
+    margin-bottom: 0;
+  }
 
-    .services .icon i {
-        font-size: 48px;
-        line-height: 1;
-        margin-bottom: 15px;
-        color: #ef7f4d;
-    }
+  .featured-services .icon-box:hover .title a,
+  .featured-services .icon-box:hover .description {
+    color: #fff;
+  }
 
-    .services .title {
-        font-weight: 700;
-        margin-bottom: 15px;
-        font-size: 18px;
-    }
+  .featured-services .icon-box:hover .icon i {
+    color: #fff;
+  }
 
-    .services .title a {
-        color: #111;
-    }
 
-    .services .description {
-        font-size: 15px;
-        line-height: 28px;
-        margin-bottom: 0;
-    }
 </style>
 
 <body>
-    <div id="header"></div>
+  <div id="header"></div>
 
 
-    <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex align-items-center">
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+      <h1>Welcome to <span>BizLand</span></h1>
+      <h2>We are team of talented designers making websites with Bootstrap</h2>
+      <div class="d-flex">
+        <a href="#about" class="btn-get-started scrollto">Get Started</a>
+        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i
+            class="bi bi-play-circle"></i><span>Watch Video</span></a>
+      </div>
+    </div>
+  </section><!-- End Hero -->
 
-        <div class="container">
-            <div class="row gy-4">
-                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-                    <h1>Bettter digital experience with Ninestars</h1>
-                    <h2>We are team of talented designers making websites with Bootstrap</h2>
-                    <div>
-                        <a href="#about" class="btn-get-started scrollto">Get Started</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 order-1 order-lg-2 hero-img">
-                    <img src="assets/img/hero-img.svg" class="img-fluid animated" alt="">
-                </div>
-            </div>
+
+  <!-- ======= Featured Services Section ======= -->
+  <section id="featured-services" class="featured-services">
+    <div class="container" data-aos="fade-up">
+
+      <div class=" text-center">
+        <h5 class="text-primary"><b>Loan Eligibility</b></h5>
+        <h3 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Personal Loan Eligibility Criteria</h3>
+        <p >Personal Loans are an unsecured form of multipurpose credit, which may be used to cover a number of personal expenses. You can acquire a personal loan by qualifying with preset eligibility criteria, which are minimal. The basic eligibility criteria are as follows.</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon"><i class="bx bxl-dribbble"></i></div>
+            <h4 class="title"><a href="">Age</a></h4>
+            <p class="description">Your age becomes an important criterion as a measure of your ability to repay a Personal Loan. As a rule, you will not be denied a loan if you are a salaried person aged between 21 to 58 years. On the other hand, if you are a self-employed professional, your age must be between 25 to 65 years.</p>
+          </div>
         </div>
 
-    </section><!-- End Hero -->
-    <section>
-        <br>
-    </section>
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon"><i class="bx bx-file"></i></div>
+            <h4 class="title"><a href="">Employment</a></h4>
+            <p class="description">Your term or period of employment becomes a measure of your reliability to repay a loan in time. Personal loans for salaried employees' criterion dictates that you must be working for an MNC or a Private or Public Limited Company with a minimum work experience of 2 to 3 years. Likewise, self-employed professionals must have a minimum of 3 years of experience for personal loan eligibility.</p>
+          </div>
+        </div>
 
-        <!-- ======= Services Section ======= -->
-        <section id="services" class="services section-bg">
-            <div class="container" data-aos="fade-up">
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon"><i class="bx bx-tachometer"></i></div>
+            <h4 class="title"><a href="">Income</a></h4>
+            <p class="description">The minimum salary required for a personal loan as an income criterion for eligibility differs from lender to lender. Your personal loan minimum salary starts from Rs. 20,000 per month.</p>
+          </div>
+        </div>
 
-                <div class="section-title">
-                    <h2>Services</h2>
-                    <p>Check out the great services we offer</p>
-                </div>
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon"><i class="bx bx-world"></i></div>
+            <h4 class="title"><a href="">Credit Score</a></h4>
+            <p class="description">Lenders assess your creditworthiness or ability to repay a personal loan by accessing your credit score, which derives from your credit history in your credit report. Your credit score affects the loan amount, period of credit, interest rate, and terms that you are offered.</p>
+          </div>
+        </div>
 
-                <div class="row">
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="icon-box">
-                            <div class="icon"><i class="fa fa-user"></i></div>
-                            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate</p>
-                        </div>
-                    </div>
+      </div>
 
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="icon-box">
-                            <div class="icon"><i class="fa fa-user"></i></div>
-                            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="icon-box">
-                            <div class="icon"><i class="fa fa-user"></i></div>
-                            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="icon-box">
-                            <div class="icon"><i class="fa fa-user"></i></div>
-                            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate</p>
-                        </div>
-                    </div>
+    </div>
+  </section><!-- End Featured Services Section -->
 
 
-                </div>
-
-            </div>
-        </section><!-- End Services Section -->
 
 
-        <div id="footer"></div>
-        <script src="../js/script.js"></script>
+  <!-- ======= Major Factor Section ======= -->
+  <section id="featured-services" class="featured-services">
+    <div class="container" data-aos="fade-up">
+      
+      <div class=" text-center">
+        <h5 class="text-primary"><b>Major Factor</b></h5>
+        <h3 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Factors That Affect Personal Loan Eligibility</h3>
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-6 col-lg-6 d-flex align-items-stretch mb-5 mb-lg-0">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon"><i class="bx bxl-dribbble"></i></div>
+            <h4 class="title"><a href="">Income</a></h4>
+            <p class="description">Your bank loan eligibility depends heavily on your income. Higher the income, higher are chances of you getting a Personal Loan at low interest rate.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-6 d-flex align-items-stretch mb-5 mb-lg-0">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon"><i class="bx bx-file"></i></div>
+            <h4 class="title"><a href="">Credit and Repayment History</a></h4>
+            <p class="description">Banks and NBFCs at all times consider the credit profile of a borrower before sanctioning a loan. Lenders may reject your loan application, or charge you a higher rate of interest if your repayment history shows that you have not been good at repaying credit. A good credit score helps to increase your chances of loan approval.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-6 d-flex align-items-stretch mb-5 mb-lg-0">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon"><i class="bx bx-tachometer"></i></div>
+            <h4 class="title"><a href="">Banking Relationship</a></h4>
+            <p class="description">A good banking relationship helps in loan approvals. If you have a salary account or a savings account with the lending bank, the chances of loan approval are higher, and the terms and conditions offered along with the interest rate are favourable as well.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-6 d-flex align-items-stretch mb-5 mb-lg-0">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon"><i class="bx bx-world"></i></div>
+            <h4 class="title"><a href="">Ability to Negotiate</a></h4>
+            <p class="description">Personal loan eligibility factors such as income, credit history, and a strong banking relationship ensure good scope for negotiating better terms and conditions, better interest rates, and better loan tenures for your borrowings. Special offers are part of your package if you negotiate well.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Major Factor Section -->
+
+
+  <div id="footer"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- <script src="../js/script.js"></script> -->
 </body>
 
 </html>
