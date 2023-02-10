@@ -156,6 +156,7 @@
                 </div>
 
                 <div id="personal-loan-section"></div>
+                <div id="home-loan-section"></div>
 
 
             </div>
@@ -457,40 +458,13 @@
             // document.querySelector('.output').textContent = output;
             if (output === "personal_loan") {
                 document.getElementById('personal-loan-section').style.display = 'flex';
-                document.getElementById('exception-section').style.display = 'none';
-                document.getElementById('business-loan-section').style.display = 'none';
-                document.getElementById('gold-loan-section').style.display = 'none';
                 document.getElementById('home-loan-section').style.display = 'none';
                 alert("this is sample test")
             }
             else if (output === "home_loan") {
-                document.getElementById('exception-section').style.display = 'none';
                 document.getElementById('personal-loan-section').style.display = 'none';
                 document.getElementById('home-loan-section').style.display = 'flex';
-                document.getElementById('business-loan-section').style.display = 'none';
-                document.getElementById('gold-loan-section').style.display = 'none';
-                // document.getElementById('calculator-tool').style.display='none';
-            }
-            else if (output === "business_loan") {
-                document.getElementById('exception-section').style.display = 'none';
-                document.getElementById('personal-loan-section').style.display = 'none';
-                document.getElementById('home-loan-section').style.display = 'none';
-                document.getElementById('business-loan-section').style.display = 'flex';
-                document.getElementById('gold-loan-section').style.display = 'none';
-            }
-            else if (output === "gold_loan") {
-                document.getElementById('exception-section').style.display = 'none';
-                document.getElementById('personal-loan-section').style.display = 'none';
-                document.getElementById('home-loan-section').style.display = 'none';
-                document.getElementById('business-loan-section').style.display = 'none';
-                document.getElementById('gold-loan-section').style.display = 'flex';
-            }
-            else {
-                document.getElementById('exception-section').style.display = 'flex';
-                document.getElementById('personal-loan-section').style.display = 'none';
-                document.getElementById('home-loan-section').style.display = 'none';
-                document.getElementById('business-loan-section').style.display = 'none';
-                document.getElementById('gold-loan-section').style.display = 'none';
+                alert("this is sample test")
             }
         }
     </script>
