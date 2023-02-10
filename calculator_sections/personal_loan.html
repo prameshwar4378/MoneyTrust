@@ -89,3 +89,66 @@
                         </center>
                     </div>
                 </div>
+<script>
+     var var_range_loan_amount = document.getElementById("range-loan-amount");
+        var_range_loan_amount.oninput = function () {
+            var value1 = document.getElementById("lbl-loan-amount").innerHTML = this.value;
+            document.getElementById('txt-loan-amount').value = value1
+
+            var var_txt_loan_amount = Number(document.getElementById('txt-loan-amount').value = value1)
+            var var_txt_rate_of_interest = Number(document.getElementById('txt-rate-of-interest').value)
+            var var_txt_loan_tenure = Number(document.getElementById('txt-loan-tenure').value)
+
+            var rate_of_interest = (var_txt_loan_amount * var_txt_rate_of_interest * (var_txt_loan_tenure * 12)) / 100
+            document.getElementById('lbl-total-interest-payable').textContent = rate_of_interest
+            document.getElementById('lbl-total-amount-payable').textContent = rate_of_interest + var_txt_loan_amount
+            document.getElementById('lbl-monthly-emi').textContent = (rate_of_interest + var_txt_loan_amount) / (var_txt_loan_tenure * 12) ^ 0
+        }
+
+        var var_rate_of_interest = document.getElementById("range-rate-of-interest");
+        var_rate_of_interest.oninput = function () {
+            var value2 = document.getElementById("lbl-rate-of-interest").innerHTML = this.value;
+            document.getElementById('txt-rate-of-interest').value = value2
+
+            var var_txt_loan_amount = Number(document.getElementById('txt-loan-amount').value)
+            var var_txt_rate_of_interest = Number(document.getElementById('txt-rate-of-interest').value = value2)
+            var var_txt_loan_tenure = Number(document.getElementById('txt-loan-tenure').value)
+
+            var rate_of_interest = (var_txt_loan_amount * var_txt_rate_of_interest * (var_txt_loan_tenure * 12)) / 100
+            document.getElementById('lbl-total-interest-payable').textContent = rate_of_interest
+            document.getElementById('lbl-total-amount-payable').textContent = rate_of_interest + var_txt_loan_amount
+            document.getElementById('lbl-monthly-emi').textContent = (rate_of_interest + var_txt_loan_amount) / (var_txt_loan_tenure * 12) ^ 0
+
+        }
+
+        var var_range_loan_tenure = document.getElementById("range-loan-tenure");
+        var_range_loan_tenure.oninput = function () {
+            var value3 = document.getElementById("lbl-loan-tenure").innerHTML = this.value;
+            document.getElementById('txt-loan-tenure').value = value3
+
+            var var_txt_loan_amount = Number(document.getElementById('txt-loan-amount').value ^ 0)
+            var var_txt_rate_of_interest = Number(document.getElementById('txt-rate-of-interest').value ^ 0)
+            var var_txt_loan_tenure = Number(document.getElementById('txt-loan-tenure').value = value3 ^ 0)
+
+            var rate_of_interest = (var_txt_loan_amount * var_txt_rate_of_interest * (var_txt_loan_tenure * 12)) / 100
+            document.getElementById('lbl-total-interest-payable').textContent = rate_of_interest
+            document.getElementById('lbl-total-amount-payable').textContent = rate_of_interest + var_txt_loan_amount
+            document.getElementById('lbl-monthly-emi').textContent = (rate_of_interest + var_txt_loan_amount) / (var_txt_loan_tenure * 12) ^ 0
+
+        }
+
+        function calculation_text_input() {
+
+            var var_txt_loan_amount = Number(document.getElementById('txt-loan-amount').value)
+            var var_txt_rate_of_interest = Number(document.getElementById('txt-rate-of-interest').value)
+            var var_txt_loan_tenure = Number(document.getElementById('txt-loan-tenure').value)
+
+            var rate_of_interest = (var_txt_loan_amount * var_txt_rate_of_interest * (var_txt_loan_tenure * 12)) / 100
+            document.getElementById('lbl-total-interest-payable').textContent = rate_of_interest
+            document.getElementById('lbl-total-amount-payable').textContent = rate_of_interest + var_txt_loan_amount
+            document.getElementById('lbl-monthly-emi').textContent = (rate_of_interest + var_txt_loan_amount) / (var_txt_loan_tenure * 12) ^ 0
+
+        }
+        // document.getElementById('lbl-monthly-emi').textContent="15"
+
+</script>
