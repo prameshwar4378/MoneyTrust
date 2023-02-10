@@ -95,6 +95,7 @@
             var var_txt_loan_amount = Number(document.getElementById('txt-loan-amount').value = value1)
             var var_txt_rate_of_interest = Number(document.getElementById('txt-rate-of-interest').value)
             var var_txt_loan_tenure = Number(document.getElementById('txt-loan-tenure').value)
+            alert(var_txt_loan_amount)
 
             var rate_of_interest = (var_txt_loan_amount * var_txt_rate_of_interest * (var_txt_loan_tenure * 12)) / 100
             document.getElementById('lbl-total-interest-payable').textContent = rate_of_interest
