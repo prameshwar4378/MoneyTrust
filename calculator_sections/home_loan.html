@@ -34,9 +34,9 @@
                             <div class="slidecontainer text-left" style="margin-bottom: 25px;" id="">
                                 Loan Amount
                                 <input type="range" min="1000" max="30000" value="50" class="slider"
-                                    id="range-loan-amount" step="500">
-                                <p style="display: none;">Value: <span id="lbl-loan-amount"></span></p>
-                                <input type="text" id="txt-loan-amount" class="form-control"
+                                    id="range-home-loan-amount" step="500">
+                                <p style="display: none;">Value: <span id="lbl-home-loan-amount"></span></p>
+                                <input type="text" id="txt-home-loan-amount" class="form-control"
                                     placeholder="Enter amount from 1,00,000 to 10,00,00,000"
                                     onchange="calculation_text_input()">
                             </div>
@@ -46,9 +46,9 @@
                                     <div class="slidecontainer text-left" style="margin-bottom: 5px;">
                                         Rate of Interest
                                         <input type="range" min="2" max="15" value="5" class="slider"
-                                            id="range-rate-of-interest">
-                                        <p style="display: none;">Value: <span id="lbl-rate-of-interest"></span></p>
-                                        <input type="text" id="txt-rate-of-interest" class="form-control" value="5"
+                                            id="range-rate-of-interest-home-loan">
+                                        <p style="display: none;">Value: <span id="lbl-rate-of-interest-home-loan"></span></p>
+                                        <input type="text" id="txt-rate-of-interest-home-loan" class="form-control" value="5"
                                             onchange="calculation_text_input()">
                                     </div>
                                 </div>
@@ -56,9 +56,9 @@
                                     <div class="slidecontainer text-left">
                                         Loan Duration (year)
                                         <input type="range" min="1" max="30" value="5" class="slider"
-                                            id="range-loan-tenure">
-                                        <p style="display: none;">Value: <span id="lbl-loan-tenure"></span></p>
-                                        <input type="text" id="txt-loan-tenure" class="form-control" value="5"
+                                            id="range-home-loan-tenure">
+                                        <p style="display: none;">Value: <span id="lbl-home-loan-tenure"></span></p>
+                                        <input type="text" id="txt-home-loan-tenure" class="form-control" value="5"
                                             onchange="calculation_text_input()">
                                     </div>
                                 </div>
@@ -68,17 +68,17 @@
                             <div class="row alert alert-primary mt-4" style="width: 99%;" id="calculator_output">
                                 <div class="col-sm-4">
                                     <p style="font-size: 15px;">Monthly EMI</p>
-                                    <span id="lbl-monthly-emi"
+                                    <span id="lbl-monthly-emi-home-loan"
                                         style="font-size: 25px; font-weight: 1000;"><b>000</b></span>
                                 </div>
                                 <div class="col-sm-4">
                                     <p style="font-size: 15px;">Total Interest Payable</p>
-                                    <span id="lbl-total-interest-payable"
+                                    <span id="lbl-total-interest-payable-home-loan"
                                         style="font-size: 25px; font-weight: 1000;"><b>000</b></span>
                                 </div>
                                 <div class="col-sm-4">
                                     <p style="font-size: 15px;">TOTAL AMOUNT PAYABLE</p>
-                                    <span id="lbl-total-amount-payable"
+                                    <span id="lbl-total-amount-payable-home-loan"
                                         style="font-size: 25px; font-weight: 1000;"><b>000</b></span>
                                 </div>
                             </div>
@@ -87,66 +87,65 @@
                 </div>
                 
 <script>
-     var var_range_loan_amount = document.getElementById("range-loan-amount");
-        var_range_loan_amount.oninput = function () {
-            var value1 = document.getElementById("lbl-loan-amount").innerHTML = this.value;
-            document.getElementById('txt-loan-amount').value = value1
+     var var_range_home_loan_amount = document.getElementById("range-home-loan-amount");
+        var_range_home_loan_amount.oninput = function () {
+            var value1 = document.getElementById("lbl-home-loan-amount").innerHTML = this.value;
+            document.getElementById('txt-home-loan-amount').value = value1
 
-            var var_txt_loan_amount = Number(document.getElementById('txt-loan-amount').value = value1)
-            var var_txt_rate_of_interest = Number(document.getElementById('txt-rate-of-interest').value)
-            var var_txt_loan_tenure = Number(document.getElementById('txt-loan-tenure').value)
-            alert(var_txt_loan_amount)
+            var var_txt_home_loan_amount = Number(document.getElementById('txt-home-loan-amount').value = value1)
+            var var_txt_rate_of_interest = Number(document.getElementById('txt-rate-of-interest-home-loan').value)
+            var var_txt_loan_tenure = Number(document.getElementById('txt-home-loan-tenure').value)
 
-            var rate_of_interest = (var_txt_loan_amount * var_txt_rate_of_interest * (var_txt_loan_tenure * 12)) / 100
-            document.getElementById('lbl-total-interest-payable').textContent = rate_of_interest
-            document.getElementById('lbl-total-amount-payable').textContent = rate_of_interest + var_txt_loan_amount
-            document.getElementById('lbl-monthly-emi').textContent = (rate_of_interest + var_txt_loan_amount) / (var_txt_loan_tenure * 12) ^ 0
+            var rate_of_interest = (var_txt_home_loan_amount * var_txt_rate_of_interest * (var_txt_loan_tenure * 12)) / 100
+            document.getElementById('lbl-total-interest-payable-home-loan').textContent = rate_of_interest
+            document.getElementById('lbl-total-amount-payable-home-loan').textContent = rate_of_interest + var_txt_home_loan_amount
+            document.getElementById('lbl-monthly-emi-home-loan').textContent = (rate_of_interest + var_txt_home_loan_amount) / (var_txt_loan_tenure * 12) ^ 0
         }
 
-        var var_rate_of_interest = document.getElementById("range-rate-of-interest");
+        var var_rate_of_interest = document.getElementById("range-rate-of-interest-home-loan");
         var_rate_of_interest.oninput = function () {
-            var value2 = document.getElementById("lbl-rate-of-interest").innerHTML = this.value;
-            document.getElementById('txt-rate-of-interest').value = value2
+            var value2 = document.getElementById("lbl-rate-of-interest-home-loan").innerHTML = this.value;
+            document.getElementById('txt-rate-of-interest-home-loan').value = value2
 
-            var var_txt_loan_amount = Number(document.getElementById('txt-loan-amount').value)
-            var var_txt_rate_of_interest = Number(document.getElementById('txt-rate-of-interest').value = value2)
-            var var_txt_loan_tenure = Number(document.getElementById('txt-loan-tenure').value)
+            var var_txt_home_loan_amount = Number(document.getElementById('txt-home-loan-amount').value)
+            var var_txt_rate_of_interest = Number(document.getElementById('txt-rate-of-interest-home-loan').value = value2)
+            var var_txt_loan_tenure = Number(document.getElementById('txt-home-loan-tenure').value)
 
-            var rate_of_interest = (var_txt_loan_amount * var_txt_rate_of_interest * (var_txt_loan_tenure * 12)) / 100
-            document.getElementById('lbl-total-interest-payable').textContent = rate_of_interest
-            document.getElementById('lbl-total-amount-payable').textContent = rate_of_interest + var_txt_loan_amount
-            document.getElementById('lbl-monthly-emi').textContent = (rate_of_interest + var_txt_loan_amount) / (var_txt_loan_tenure * 12) ^ 0
+            var rate_of_interest = (var_txt_home_loan_amount * var_txt_rate_of_interest * (var_txt_loan_tenure * 12)) / 100
+            document.getElementById('lbl-total-interest-payable-home-loan').textContent = rate_of_interest
+            document.getElementById('lbl-total-amount-payable-home-loan').textContent = rate_of_interest + var_txt_home_loan_amount
+            document.getElementById('lbl-monthly-emi-home-loan').textContent = (rate_of_interest + var_txt_home_loan_amount) / (var_txt_loan_tenure * 12) ^ 0
 
         }
 
-        var var_range_loan_tenure = document.getElementById("range-loan-tenure");
+        var var_range_loan_tenure = document.getElementById("range-home-loan-tenure");
         var_range_loan_tenure.oninput = function () {
-            var value3 = document.getElementById("lbl-loan-tenure").innerHTML = this.value;
-            document.getElementById('txt-loan-tenure').value = value3
+            var value3 = document.getElementById("lbl-home-loan-tenure").innerHTML = this.value;
+            document.getElementById('txt-home-loan-tenure').value = value3
 
-            var var_txt_loan_amount = Number(document.getElementById('txt-loan-amount').value ^ 0)
-            var var_txt_rate_of_interest = Number(document.getElementById('txt-rate-of-interest').value ^ 0)
-            var var_txt_loan_tenure = Number(document.getElementById('txt-loan-tenure').value = value3 ^ 0)
+            var var_txt_home_loan_amount = Number(document.getElementById('txt-home-loan-amount').value ^ 0)
+            var var_txt_rate_of_interest = Number(document.getElementById('txt-rate-of-interest-home-loan').value ^ 0)
+            var var_txt_loan_tenure = Number(document.getElementById('txt-home-loan-tenure').value = value3 ^ 0)
 
-            var rate_of_interest = (var_txt_loan_amount * var_txt_rate_of_interest * (var_txt_loan_tenure * 12)) / 100
-            document.getElementById('lbl-total-interest-payable').textContent = rate_of_interest
-            document.getElementById('lbl-total-amount-payable').textContent = rate_of_interest + var_txt_loan_amount
-            document.getElementById('lbl-monthly-emi').textContent = (rate_of_interest + var_txt_loan_amount) / (var_txt_loan_tenure * 12) ^ 0
+            var rate_of_interest = (var_txt_home_loan_amount * var_txt_rate_of_interest * (var_txt_loan_tenure * 12)) / 100
+            document.getElementById('lbl-total-interest-payable-home-loan').textContent = rate_of_interest
+            document.getElementById('lbl-total-amount-payable-home-loan').textContent = rate_of_interest + var_txt_home_loan_amount
+            document.getElementById('lbl-monthly-emi-home-loan').textContent = (rate_of_interest + var_txt_home_loan_amount) / (var_txt_loan_tenure * 12) ^ 0
 
         }
 
         function calculation_text_input() {
 
-            var var_txt_loan_amount = Number(document.getElementById('txt-loan-amount').value)
-            var var_txt_rate_of_interest = Number(document.getElementById('txt-rate-of-interest').value)
-            var var_txt_loan_tenure = Number(document.getElementById('txt-loan-tenure').value)
+            var var_txt_home_loan_amount = Number(document.getElementById('txt-home-loan-amount').value)
+            var var_txt_rate_of_interest = Number(document.getElementById('txt-rate-of-interest-home-loan').value)
+            var var_txt_loan_tenure = Number(document.getElementById('txt-home-loan-tenure').value)
 
-            var rate_of_interest = (var_txt_loan_amount * var_txt_rate_of_interest * (var_txt_loan_tenure * 12)) / 100
-            document.getElementById('lbl-total-interest-payable').textContent = rate_of_interest
-            document.getElementById('lbl-total-amount-payable').textContent = rate_of_interest + var_txt_loan_amount
-            document.getElementById('lbl-monthly-emi').textContent = (rate_of_interest + var_txt_loan_amount) / (var_txt_loan_tenure * 12) ^ 0
+            var rate_of_interest = (var_txt_home_loan_amount * var_txt_rate_of_interest * (var_txt_loan_tenure * 12)) / 100
+            document.getElementById('lbl-total-interest-payable-home-loan').textContent = rate_of_interest
+            document.getElementById('lbl-total-amount-payable-home-loan').textContent = rate_of_interest + var_txt_home_loan_amount
+            document.getElementById('lbl-monthly-emi-home-loan').textContent = (rate_of_interest + var_txt_home_loan_amount) / (var_txt_loan_tenure * 12) ^ 0
 
         }
-        // document.getElementById('lbl-monthly-emi').textContent="15"
+        // document.getElementById('lbl-monthly-emi-home-loan').textContent="15"
 
 </script>
