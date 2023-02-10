@@ -59,6 +59,8 @@
     $(function () {
         $("#header").load("./header.html");
         $("#footer").load("./footer.html");
+        $("#personal-loan-section").load("./calculator_sections/personal_loan.html");
+        $("#home-loan-section").load("./calculator_sections/home_loan.html");
     });
 </script>
 
@@ -154,8 +156,8 @@
                     <div class="col-sm-2"></div>
                 </div>
 
-                <!-- <div id="personal-loan-section" style="display: none;"></div> -->
-                <div id="home-loan-section" style="display: none;"></div>
+                <div id="personal-loan-section"></div>
+                <div id="home-loan-section"></div>
 
 
             </div>
@@ -411,11 +413,17 @@
 
 
     <script>
+       
+
         const select1 = document.getElementById("cmb_loan_type");
         const select2 = document.getElementById("cmb_loan_type_option");
+
+
         select1.addEventListener("change", function () {
             const selectedOption = this.value;
+
             select2.innerHTML = "";
+
             if (selectedOption === "Loan") {
                 select2.innerHTML = `
             <option value="">--- Select ---</option>
@@ -447,17 +455,16 @@
         function getOption_for_calculator() {
             selectElement = document.querySelector('#cmb_loan_type_option');
             output = selectElement.value;
+            // document.querySelector('.output').textContent = output;
             if (output === "personal_loan") {
-                $(function () {
-                $("#personal-loan-section").load("./calculator_sections/personal_loan.html");
-                });
+                alert("Personal Loan Called")
+                document.getElementById('home-loan-section').style.display = 'none';
+                document.getElementById('personal-loan-section').style.display = 'flex';
             }
             else if (output === "home_loan") {
-
                 alert("Home Loan Called")
-                $(function () {
-                 $("#home-loan-section").load("./calculator_sections/home_loan.html");
-                });
+                document.getElementById('home-loan-section').style.display = 'flex';
+                document.getElementById('personal-loan-section').style.display = 'none';
             }
         }
     </script>
