@@ -458,13 +458,13 @@
             output = selectElement.value;
             // document.querySelector('.output').textContent = output;
             if (output === "personal_loan") {
-                document.getElementById('personal-loan-section').style.display = 'flex';
+                // document.getElementById('personal-loan-section').style.display = 'flex';
+                alert("Personal Loan Called")
                 document.getElementById('home-loan-section').style.display = 'none';
-                alert("this is sample test")
             }
             else if (output === "home_loan") {
-                alert("this is sample test")
-                document.getElementById('personal-loan-section').style.display = 'none';
+                alert("Home Loan Called")
+                // document.getElementById('personal-loan-section').style.display = 'none';
                 document.getElementById('home-loan-section').style.display = 'flex';
             }
             alert('Direct Call')
