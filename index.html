@@ -411,17 +411,11 @@
 
 
     <script>
-       
-
         const select1 = document.getElementById("cmb_loan_type");
         const select2 = document.getElementById("cmb_loan_type_option");
-
-
         select1.addEventListener("change", function () {
             const selectedOption = this.value;
-
             select2.innerHTML = "";
-
             if (selectedOption === "Loan") {
                 select2.innerHTML = `
             <option value="">--- Select ---</option>
@@ -453,18 +447,17 @@
         function getOption_for_calculator() {
             selectElement = document.querySelector('#cmb_loan_type_option');
             output = selectElement.value;
-            // document.querySelector('.output').textContent = output;
             if (output === "personal_loan") {
-                // document.getElementById('personal-loan-section').style.display = 'flex';
-                alert("Personal Loan Called")
-                // document.getElementById('home-loan-section').style.display = 'none';
+                $(function () {
                 $("#personal-loan-section").load("./calculator_sections/personal_loan.html");
+                });
             }
             else if (output === "home_loan") {
+
                 alert("Home Loan Called")
-                // document.getElementById('personal-loan-section').style.display = 'none';
-                // document.getElementById('home-loan-section').style.display = 'flex';
+                $(function () {
                  $("#home-loan-section").load("./calculator_sections/home_loan.html");
+                });
             }
         }
     </script>
